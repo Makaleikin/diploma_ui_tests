@@ -1,13 +1,6 @@
-import os
-from typing import Tuple
-
 import allure
-from selene import have, command, be
+from selene import have, be
 from selene.support.shared import browser
-from selenium.webdriver.common.keys import Keys
-
-from tesla_tests.model.contols import datepicker, dropdown, modal
-from tests.test_data.tesla_data import Tesla
 
 
 @allure.step('Открываем сайт Tesla')
