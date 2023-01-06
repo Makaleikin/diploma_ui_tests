@@ -23,29 +23,33 @@ def check_tesla_model_s_specification(range, boost, speed, power):
     browser.all('[class="tcl-badge tcl-animate tcl-animate--to-reveal tcl-animate--revealed"]').should(have.exact_texts(range.value, boost.value, speed.value, power.value))
 
 
-@allure.step('Жмем кнопку "Buy Now"')
-def click_buy_now():
+@allure.step('Жмем кнопку "Order Now"')
+def click_order_now():
     button_buy_now = '[class="tcl-badges__button tcl-animate tcl-animate--to-reveal tcl-animate--revealed"]'
     browser.element(button_buy_now).should(be.visible)
     browser.element(button_buy_now).click()
 
 
-@allure.step('Проверяем, что открылся "Inventory"')
-def inventory_has_open():
-    inventory = '[class="inventory-header-wrapper sticky-content tds-scrim--white"]'
-    browser.element(inventory).should(be.visible)
+def check_price_model_s_and_model_s_plaid():
+    price = '[class="group--options_block-container_price group--options_block-option_price text-loader--content price-not-included"]'
+    browser.all(price).should(have.texts('$96,590', '$127,590'))
+
+# @allure.step('Проверяем, что открылся "Inventory"')
+# def inventory_has_open():
+#     inventory = '[class="inventory-header-wrapper sticky-content tds-scrim--white"]'
+#     browser.element(inventory).should(be.visible)
 
 
-@allure.step('Жмем чекбокс "Used"')
-def click_checkbox_used():
-    used_checkbox = '[title="Used"]'
-    browser.element(used_checkbox).click()
+# @allure.step('Жмем чекбокс "Used"')
+# def click_checkbox_used():
+#     used_checkbox = '[title="Used"]'
+#     browser.element(used_checkbox).click()
 
 
-@allure.step('Проверяем, что в продаже есть автомобили с пробегом')
-def inventory_display_used_cars():
-    used_cars = '[class="result card"]'
-    browser.all(used_cars).should(have.size_greater_than_or_equal(1))
+# @allure.step('Проверяем, что в продаже есть автомобили с пробегом')
+# def inventory_display_used_cars():
+#     used_cars = '[class="result card"]'
+#     browser.all(used_cars).should(have.size_greater_than_or_equal(1))
 
 
 @allure.step('В хедере, кликаем на "Model 3"')

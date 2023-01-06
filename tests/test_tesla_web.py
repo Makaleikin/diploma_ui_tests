@@ -1,4 +1,5 @@
 import allure
+from allure_commons.types import Severity
 
 from tesla_tests.model.pages import tesla
 from test_data.tesla_data import model_s, model_3, model_x
@@ -7,7 +8,8 @@ from test_data.tesla_data import model_s, model_3, model_x
 @allure.tag("web")
 @allure.label('owner', 'MlynskijArtem')
 @allure.feature('Проверка характеристик Tesla Model S')
-@allure.link('https://www.tesla.com/', name='Testing')
+@allure.link('https://www.tesla.com/models', name='Testing')
+@allure.severity(Severity.CRITICAL)
 def test_check_specification_model_s():
     # GIVEN
     tesla.given_opened()
@@ -18,18 +20,26 @@ def test_check_specification_model_s():
     tesla.check_tesla_model_s_specification(model_s.range, model_s.boost, model_s.speed, model_s.power)
 
 
-def test_buy_used_model_s():
+@allure.tag("web")
+@allure.label('owner', 'MlynskijArtem')
+@allure.feature('Проверка цены Tesla Model S/Tesla Model S')
+@allure.link('https://www.tesla.com/models/design#overview', name='Testing')
+@allure.severity(Severity.CRITICAL)
+def test_order_now_model_s():
     # GIVEN
     tesla.given_opened()
     # WHEN
     tesla.click_on_tesla_model_s()
-    tesla.click_buy_now()
-    tesla.click_checkbox_used()
+    tesla.click_order_now()
     # THEN
-    tesla.inventory_has_open()
-    tesla.inventory_display_used_cars()
+    tesla.check_price_model_s_and_model_s_plaid()
 
 
+@allure.tag("web")
+@allure.label('owner', 'MlynskijArtem')
+@allure.feature('Проверка характеристик Tesla Model 3')
+@allure.link('https://www.tesla.com/model3', name='Testing')
+@allure.severity(Severity.CRITICAL)
 def test_check_specification_model_3():
     # GIVEN
     tesla.given_opened()
@@ -40,6 +50,11 @@ def test_check_specification_model_3():
     tesla.check_tesla_model_y_specification(model_3.boost, model_3.range, model_3.drive)
 
 
+@allure.tag("web")
+@allure.label('owner', 'MlynskijArtem')
+@allure.feature('Проверка характеристик Tesla Model X')
+@allure.link('https://www.tesla.com/modelx', name='Testing')
+@allure.severity(Severity.CRITICAL)
 def test_check_specification_model_x():
     # GIVEN
     tesla.given_opened()
