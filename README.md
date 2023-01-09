@@ -55,7 +55,7 @@
 
 <!-- Telegram -->
 
-## <img width="3%" title="Telegram" src="images/logo/tg.png"> Проект так же интегрирован с telegram
+## <img width="3%" title="Telegram" src="images/logo/tg.png"> Проект так же интегрирован с Telegram
 #### По окончании прохождения тестов, бот присылает сообщение с информацией о test run'е, в сообщении содержится ссылка на Allure отчет
 
 ![This is an image](images/screenshots/telegram_notification.png)
