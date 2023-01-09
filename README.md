@@ -32,7 +32,7 @@
 
 ## [Job](https://jenkins.autotests.cloud/job/ui_diploma_tests/)
 
-#### Когда нажимаем "Собрать сейчас" начинается сборка билда, запустятся тесты. Тесты проходят на виртуальной машине в Selenide.
+#### Когда нажимаем "Собрать сейчас" начнется сборка билда, запустятся тесты. Тесты проходят на виртуальной машине в Selenide.
 
 ![This is an image](images/screenshots/jenkins_start.png)
 
